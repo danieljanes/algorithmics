@@ -31,6 +31,12 @@ cd algorithmics
 ./pants run src/python/algorithmics:search_example
 ```
 
+### Static Analysis
+
+```bash
+./pants mypy src/python/algorithmics:search
+```
+
 ### Test
 
 ```bash
