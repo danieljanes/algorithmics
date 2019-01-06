@@ -11,7 +11,7 @@ def binary_search(list, key):
     l = 0
     r = len(list) - 1
     while l < r:
-        i = l + int((r-l) / 2)
+        i = l + (r-l) // 2
         item = list[i]
         if item == key:
             return True
