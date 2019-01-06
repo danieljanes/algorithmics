@@ -1,0 +1,7 @@
+# Pants
+.cache
+.pants.d
+dist
+.pids
+.pants.workdir.file_lock
+*.egg-info
