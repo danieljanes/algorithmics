@@ -15,15 +15,9 @@ Educational implementations of a few common algorithms and data structures:
 Pants Build System: `https://pantsbuild.org`
 
 ```bash
-git clone ...
+git clone git@github.com:danieljanes/algorithmics.git
 cd algorithmics
 ./pants bootstrap
-```
-
-### Build Library
-
-```bash
-./pants build src/python/algorithmics:search
 ```
 
 ### Run Example
