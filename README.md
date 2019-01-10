@@ -4,8 +4,9 @@
 
 Educational implementations of a few common algorithms and data structures:
 
-- Linear Search
-- Binary Search
+- SimpleHashMap: A simplified reimplementation of Python's built-in `dict` which uses linear probing
+- Linear Search: O(n) search on unsorted lists
+- Binary Search: O(log n) search on sorted lists
 
 ## Setup
 
