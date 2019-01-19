@@ -2,11 +2,17 @@
 
 ## Introduction
 
-Educational implementations of a few common algorithms and data structures:
+Educational implementations of a few common algorithms and data structures.
+
+Data structures:
 
 - SimpleHashMap: A simplified reimplementation of Python's built-in `dict` which uses linear probing
-- Linear Search: O(n) search on unsorted lists
+- Stack
+
+Algorithms:
+
 - Binary Search: O(log n) search on sorted lists
+- Linear Search: O(n) search on unsorted lists
 
 ## Setup
 
@@ -23,13 +29,13 @@ cd algorithmics
 ### Run Example
 
 ```bash
-./pants run src/python/algorithmics:search_example
+./pants run src/python/algorithmics:stack_example
 ```
 
 ### Static Analysis
 
 ```bash
-./pants mypy src/python/algorithmics:search
+./pants mypy src/python/algorithmics:stack
 ```
 
 ### Test

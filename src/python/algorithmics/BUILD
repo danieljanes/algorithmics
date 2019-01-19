@@ -28,3 +28,18 @@ python_library(
     ],
     sources = ['search.py'],
 )
+
+python_binary(
+    name = 'stack_example',
+    dependencies = [
+        "src/python/algorithmics:stack"
+    ],
+    source = 'stack_example.py',
+)
+
+python_library(
+    name = 'stack',
+    dependencies = [
+    ],
+    sources = ['stack.py'],
+)
