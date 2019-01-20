@@ -15,6 +15,21 @@ python_library(
 )
 
 python_binary(
+    name = 'queue_example',
+    dependencies = [
+        "src/python/algorithmics:queue"
+    ],
+    source = 'queue_example.py',
+)
+
+python_library(
+    name = 'queue',
+    dependencies = [
+    ],
+    sources = ['queue.py'],
+)
+
+python_binary(
     name = 'search_example',
     dependencies = [
         "src/python/algorithmics:search"

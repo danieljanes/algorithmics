@@ -4,11 +4,14 @@
 
 Educational implementations of common algorithms and data structures.
 
+    Warning: The provided implementations are for educational purposes only. The implementations are not production grade and the testing is neither complete nor comprehensive.
+
 Data structures:
 
 - `HashMap`: A reimplementation of CPython's built-in `dict` using optimized probing
 - `SimpleHashMap`: A simplified reimplementation of CPython's built-in `dict` using linear probing
-- `Stack`: LIFO queue implemented using a linked list
+- `Stack`: LIFO linear data structure implemented using a linked list
+- `Queue`: FIFO linear data structure implemented using a linked list
 
 Algorithms:
 
