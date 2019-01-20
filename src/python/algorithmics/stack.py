@@ -28,6 +28,9 @@ class Stack(object):
         self.top = node
         self.length += 1
 
+    def is_empty(self) -> bool:
+        return self.length == 0
+
     def __len__(self) -> int:
         return self.length
 

@@ -13,17 +13,20 @@ def test_empty():
         fail()
     except:
         pass
+    assert s.is_empty()
     assert len(s) == 0
 
 
 def test_single_push_peek_pop():
     s = Stack()
     s.push(0)
+    assert not s.is_empty()
     assert len(s) == 1
     v = s.peek()
     assert v == 0
     v = s.pop()
     assert v == 0
+    assert s.is_empty()
     assert len(s) == 0
 
 
@@ -34,6 +37,6 @@ def test_multiple():
         s.push(v)
         assert v == s.peek()
     xs = ""
-    while len(s) > 0:
+    while not s.is_empty():
         xs = s.pop() + xs
     assert xs == vs
