@@ -1,12 +1,24 @@
+from algorithmics.hash_map import HashMap
 from algorithmics.hash_map import SimpleHashMap
 
 
-pairs = [('k0', 'v0'), ('k1', 1), (2, 'v2'), (3, 3)]
+pairs = [('k0', 'v0'), ('k1', 10), (20, 'v2'), (30, 30)]
 
 
 def main():
-    hm = SimpleHashMap()
-    hm.insert_tuples(kv_pairs)
+    # SimpleHashMap
+    shm = SimpleHashMap()
+    print("\nInitial SimpleHashMap:")
+    print(shm)
+    print("\nInsert", pairs)
+    shm.insert_tuples(pairs)
+    print(shm)
+    # HashMap
+    print("\nInitial HashMap:")
+    hm = HashMap()
+    print(hm)
+    print("\nInsert", pairs)
+    hm.insert_tuples(pairs)
     print(hm)
 
 

@@ -6,7 +6,8 @@ Educational implementations of common algorithms and data structures.
 
 Data structures:
 
-- `SimpleHashMap`: A simplified reimplementation of Python's built-in `dict` using linear probing
+- `HashMap`: A reimplementation of CPython's built-in `dict` using optimized probing
+- `SimpleHashMap`: A simplified reimplementation of CPython's built-in `dict` using linear probing
 - `Stack`: LIFO queue implemented using a linked list
 
 Algorithms:
@@ -21,23 +22,23 @@ This project requires [Python 3](https://python.org) and uses Twitter's [Pants B
 ```bash
 git clone git@github.com:danieljanes/algorithmics.git
 cd algorithmics
-./pants bootstrap
+./pants3 bootstrap
 ```
 
 ## Run Example
 
 ```bash
-./pants run src/python/algorithmics:stack_example
+./pants3 run src/python/algorithmics:stack_example
 ```
 
 ## Static Analysis
 
 ```bash
-./pants mypy src/python/algorithmics:stack
+./pants3 mypy src/python/algorithmics:stack
 ```
 
 ## Test
 
 ```bash
-./pants test tests/python/algorithmics
+./pants3 test tests/python/algorithmics
 ```
