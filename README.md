@@ -12,6 +12,7 @@ Data structures:
 - `SimpleHashMap`: A simplified reimplementation of CPython's built-in `dict` using linear probing
 - `Stack`: LIFO linear data structure implemented using a linked list
 - `Queue`: FIFO linear data structure implemented using a linked list
+- `StackBasedQueue`: FIFO linear data structure implemented using two stacks
 
 Algorithms:
 

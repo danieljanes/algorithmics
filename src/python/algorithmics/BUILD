@@ -1,7 +1,7 @@
 python_binary(
     name = 'hash_map_example',
     dependencies = [
-        "src/python/algorithmics:hash_map"
+        "src/python/algorithmics:hash_map",
     ],
     source = 'hash_map_example.py',
 )
@@ -17,7 +17,7 @@ python_library(
 python_binary(
     name = 'queue_example',
     dependencies = [
-        "src/python/algorithmics:queue"
+        "src/python/algorithmics:queue",
     ],
     source = 'queue_example.py',
 )
@@ -25,6 +25,7 @@ python_binary(
 python_library(
     name = 'queue',
     dependencies = [
+        "src/python/algorithmics:stack",
     ],
     sources = ['queue.py'],
 )
@@ -32,7 +33,7 @@ python_library(
 python_binary(
     name = 'search_example',
     dependencies = [
-        "src/python/algorithmics:search"
+        "src/python/algorithmics:search",
     ],
     source = 'search_example.py',
 )
@@ -47,7 +48,7 @@ python_library(
 python_binary(
     name = 'stack_example',
     dependencies = [
-        "src/python/algorithmics:stack"
+        "src/python/algorithmics:stack",
     ],
     source = 'stack_example.py',
 )
