@@ -16,6 +16,16 @@ def test_HashMap_insert_one():
     assert fail_if_present(hm, 'l')
 
 
+def test_HashMap_contains():
+    # prepare
+    hm = HashMap()
+    # execute
+    hm['k'] = 'v'
+    # assert
+    assert 'k' in hm
+    assert 'v' not in hm
+
+
 def test_HashMap_delete_one():
     # prepare
     hm = HashMap()

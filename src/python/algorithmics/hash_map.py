@@ -38,6 +38,13 @@ class HashMap(object):
         self.fill = 0
         self.used = 0
 
+    def __contains__(self, key: Any) -> bool:
+        try:
+            _ = self.__getitem__(key)
+            return True
+        except KeyError:
+            return False
+
     def __setitem__(self, key: Any, value: Any) -> None:
         hash_value = hash(key)
         index = hash_value % len(self.entries)
@@ -134,6 +141,13 @@ class SimpleHashMap(object):
         self.entries = [Entry()] * initial_capacity
         self.fill = 0
         self.used = 0
+
+    def __contains__(self, key: Any) -> bool:
+        try:
+            _ = self.__getitem__(key)
+            return True
+        except KeyError:
+            return False
 
     def __setitem__(self, key: Any, value: Any) -> None:
         hash_value = hash(key)
