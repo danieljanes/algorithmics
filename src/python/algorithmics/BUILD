@@ -6,12 +6,12 @@ python_binary(
     source = 'balanced_parentheses_example.py',
 )
 
-python_binary(
+python_library(
     name = 'balanced_parentheses',
     dependencies = [
         "src/python/algorithmics:stack",
     ],
-    source = 'balanced_parentheses.py',
+    sources = ['balanced_parentheses.py'],
 )
 
 python_binary(
@@ -28,6 +28,22 @@ python_library(
         '3rdparty/python:typing-extensions',
     ],
     sources = ['hash_map.py'],
+)
+
+python_binary(
+    name = 'misc_example',
+    dependencies = [
+        "src/python/algorithmics:misc",
+    ],
+    source = 'misc_example.py',
+)
+
+python_library(
+    name = 'misc',
+    dependencies = [
+        "src/python/algorithmics:hash_map",
+    ],
+    sources = ['misc.py'],
 )
 
 python_binary(
