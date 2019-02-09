@@ -1,4 +1,20 @@
 python_binary(
+    name = 'balanced_parentheses_example',
+    dependencies = [
+        "src/python/algorithmics:balanced_parentheses",
+    ],
+    source = 'balanced_parentheses_example.py',
+)
+
+python_binary(
+    name = 'balanced_parentheses',
+    dependencies = [
+        "src/python/algorithmics:stack",
+    ],
+    source = 'balanced_parentheses.py',
+)
+
+python_binary(
     name = 'hash_map_example',
     dependencies = [
         "src/python/algorithmics:hash_map",
