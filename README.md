@@ -21,23 +21,23 @@ Algorithms:
 
 ## Prerequisites
 
-This project requires [Python 3](https://python.org) and uses Twitter's [Pants Build System](https://pantsbuild.org) (which automatically sets itself up):
+This project requires [Python 3](https://python.org) and uses [Bazel](https://bazel.build).
 
-```bash
+```shell
 git clone git@github.com:danieljanes/algorithmics.git
 cd algorithmics
-./pants3 bootstrap
+bazel run //algorithmics:hash_map_example
 ```
 
 ## Run Example
 
-```bash
+```shell
 bazel run //algorithmics:stack_example
 ```
 
 ## Test
 
-```bash
+```shell
 bazel test //algorithmics:all
 ```
 
