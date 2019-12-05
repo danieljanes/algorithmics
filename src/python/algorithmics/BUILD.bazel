@@ -1,0 +1,160 @@
+load("@rules_python//python:defs.bzl", "py_binary")
+load("@rules_python//python:defs.bzl", "py_library")
+load("@rules_python//python:defs.bzl", "py_test")
+
+
+py_binary(
+  name = "balanced_parentheses_example",
+  srcs = ["balanced_parentheses_example.py"],
+  deps = [
+    ":balanced_parentheses",
+  ],
+)
+
+py_test(
+  name = "balanced_parentheses_test",
+  srcs = ["balanced_parentheses_test.py"],
+  deps = [
+    ":balanced_parentheses",
+  ],
+)
+
+py_library(
+  name = "balanced_parentheses",
+  srcs = ["balanced_parentheses.py"],
+    deps = [
+    ":stack",
+  ],
+)
+
+py_binary(
+  name = "first_recurring_char_example",
+  srcs = ["first_recurring_char_example.py"],
+  deps = [
+    ":first_recurring_char",
+  ],
+)
+
+py_test(
+  name = "first_recurring_char_test",
+  srcs = ["first_recurring_char_test.py"],
+  deps = [
+    ":first_recurring_char",
+  ],
+)
+
+py_library(
+  name = "first_recurring_char",
+  srcs = ["first_recurring_char.py"],
+)
+
+py_binary(
+  name = "hash_map_example",
+  srcs = ["hash_map_example.py"],
+  deps = [
+    ":hash_map",
+  ],
+)
+
+py_test(
+  name = "hash_map_test",
+  srcs = ["hash_map_test.py"],
+  deps = [
+    ":hash_map",
+  ],
+)
+
+py_library(
+  name = "hash_map",
+  srcs = ["hash_map.py"],
+)
+
+py_binary(
+  name = "misc_example",
+  srcs = ["misc_example.py"],
+  deps = [
+    ":misc",
+  ],
+)
+
+py_test(
+  name = "misc_test",
+  srcs = ["misc_test.py"],
+  deps = [
+    ":misc",
+  ],
+)
+
+py_library(
+  name = "misc",
+  srcs = ["misc.py"],
+  deps = [
+    ":hash_map",
+  ],
+)
+
+py_binary(
+  name = "queue_example",
+  srcs = ["queue_example.py"],
+  deps = [
+    ":queue",
+  ],
+)
+
+py_test(
+  name = "queue_test",
+  srcs = ["queue_test.py"],
+  deps = [
+    ":queue",
+  ],
+)
+
+py_library(
+  name = "queue",
+  srcs = ["queue.py"],
+  deps = [
+    ":stack",
+  ],
+)
+
+py_binary(
+  name = "search_example",
+  srcs = ["search_example.py"],
+  deps = [
+    ":search",
+  ],
+)
+
+py_test(
+  name = "search_test",
+  srcs = ["search_test.py"],
+  deps = [
+    ":search",
+  ],
+)
+
+py_library(
+  name = "search",
+  srcs = ["search.py"],
+)
+
+py_binary(
+  name = "stack_example",
+  srcs = ["stack_example.py"],
+  deps = [
+    ":stack",
+  ],
+)
+
+py_test(
+  name = "stack_test",
+  srcs = ["stack_test.py"],
+  deps = [
+    ":stack",
+  ],
+)
+
+py_library(
+  name = "stack",
+  srcs = ["stack.py"],
+)

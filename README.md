@@ -32,17 +32,17 @@ cd algorithmics
 ## Run Example
 
 ```bash
-./pants3 run src/python/algorithmics:stack_example
-```
-
-## Static Analysis
-
-```bash
-./pants3 mypy src/python/algorithmics:stack
+bazel run //algorithmics:stack_example
 ```
 
 ## Test
 
 ```bash
-./pants3 test tests/python/algorithmics
+bazel test //algorithmics:all
+```
+
+For more detailed test outputs pass the `--test_verbose_timeout_warnings` flag:
+
+```shell
+bazel  test //algorithmics:all --test_verbose_timeout_warnings
 ```

@@ -1,4 +1,4 @@
-from .first_recurring_char import first_recurring_char
+from algorithmics.first_recurring_char import first_recurring_char
 
 
 def test_first_recurring_char_found():

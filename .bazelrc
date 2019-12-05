@@ -1,0 +1,8 @@
+# General
+common --color=yes
+
+# Python
+build --incompatible_load_python_rules_from_bzl
+run --incompatible_load_python_rules_from_bzl
+test --incompatible_load_python_rules_from_bzl
+

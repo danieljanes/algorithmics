@@ -1,5 +1,4 @@
-from typing import Any
-from typing import List
+from typing import Any, List
 
 
 def linear_search(list: List[Any], key: Any) -> bool:
