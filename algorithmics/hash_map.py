@@ -1,3 +1,19 @@
+# Copyright 2020 Daniel J. Beutel. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ==============================================================================
+
+
 from typing import Any, List, Optional, Tuple
 
 
@@ -16,11 +32,13 @@ TOMBSTONE = TombstoneValue()
 
 
 class Entry(object):
-    def __init__(self, hash_value: int = 0, key: Any = EMPTY, value: Any = EMPTY) -> None:
+    def __init__(
+        self, hash_value: int = 0, key: Any = EMPTY, value: Any = EMPTY
+    ) -> None:
         self.hash_value = hash_value
         self.key = key
         self.value = value
-    
+
     def __repr__(self) -> str:
         return "{0} : {1}".format(self.key, self.value)
 
@@ -48,12 +66,13 @@ class HashMap(object):
         perturb = self.signed_to_unsigned(hash_value)
         target_index = None
         while self.entries[index].key is not EMPTY:
-            if self.entries[index].hash_value == hash_value and \
-               self.entries[index].key == key:
+            if (
+                self.entries[index].hash_value == hash_value
+                and self.entries[index].key == key
+            ):
                 target_index = index
                 break
-            if target_index is None and \
-               self.entries[index].key is TOMBSTONE:
+            if target_index is None and self.entries[index].key is TOMBSTONE:
                 target_index = index
             index = (index * 5 + perturb + 1) % len(self.entries)
             perturb >>= self.PERTURB_SHIFT
@@ -90,7 +109,7 @@ class HashMap(object):
             rep += "  < empty >\n"
         rep += "}"
         return rep
-    
+
     def insert_tuples(self, tuples: List[Tuple[Any, Any]]) -> None:
         for k, v in tuples:
             self[k] = v
@@ -120,8 +139,10 @@ class HashMap(object):
         index: int = hash_value % len(self.entries)
         perturb = self.signed_to_unsigned(hash_value)
         while self.entries[index].key is not EMPTY:
-            if self.entries[index].hash_value == hash_value and \
-               self.entries[index].key == key:
+            if (
+                self.entries[index].hash_value == hash_value
+                and self.entries[index].key == key
+            ):
                 return index
             index = (index * 5 + perturb + 1) % len(self.entries)
             perturb >>= self.PERTURB_SHIFT
@@ -129,7 +150,7 @@ class HashMap(object):
 
     @staticmethod
     def signed_to_unsigned(hash_value: int) -> int:
-        return 2**64 + hash_value if hash_value < 0 else hash_value
+        return 2 ** 64 + hash_value if hash_value < 0 else hash_value
 
 
 class SimpleHashMap(object):
@@ -151,12 +172,13 @@ class SimpleHashMap(object):
         index = hash_value % len(self.entries)
         target_index = None
         while self.entries[index].key is not EMPTY:
-            if self.entries[index].hash_value == hash_value and \
-               self.entries[index].key == key:
+            if (
+                self.entries[index].hash_value == hash_value
+                and self.entries[index].key == key
+            ):
                 target_index = index
                 break
-            if target_index is None and \
-               self.entries[index].key is TOMBSTONE:
+            if target_index is None and self.entries[index].key is TOMBSTONE:
                 target_index = index
             index = (index + 1) % len(self.entries)
         if target_index is None:
@@ -192,7 +214,7 @@ class SimpleHashMap(object):
             rep += "  < empty >\n"
         rep += "}"
         return rep
-    
+
     def insert_tuples(self, tuples: List[Tuple[Any, Any]]) -> None:
         for k, v in tuples:
             self[k] = v
@@ -218,8 +240,10 @@ class SimpleHashMap(object):
         hash_value: int = hash(key)
         index: int = hash_value % len(self.entries)
         while self.entries[index].key is not EMPTY:
-            if self.entries[index].hash_value == hash_value and \
-               self.entries[index].key == key:
+            if (
+                self.entries[index].hash_value == hash_value
+                and self.entries[index].key == key
+            ):
                 return index
             index = (index + 1) % len(self.entries)
         raise KeyError()
